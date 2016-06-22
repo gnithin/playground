@@ -118,13 +118,20 @@
 ;; Implement this for all kinds for equality - list, symbols, chars et al.
 ;; http://stackoverflow.com/questions/547436/whats-the-difference-between-eq-eql-equal-and-equalp-in-common-lisp
 (defun li_find_member(key l)
-    (if (eq (first l) key)
-        l
-        (li_find_member key (rest l))
+    (cond
+        ((null l) nil)
+        ((eq (first l) key) l)
+        (t (li_find_member key (rest l)))
     )
 )
 
-
+;; Implementing simple append
+(defun li_append_asa(val li)
+    (cond
+        ((or (null val) (null li)) nil)
+        (t (cons li (cons val nil)))
+    )
+)
 
 
 
