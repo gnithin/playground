@@ -1,3 +1,6 @@
+;;; The methods are from this tutorial - 
+;;; http://www.cs.sfu.ca/CourseCentral/310/pwfong/Lisp/1/tutorial1.html
+
 ;; Triple a number
 (defun triple(num)
 	(* 3 num)
@@ -86,8 +89,10 @@
 
 
 ;; Find the nth element
+;; Logic: pop every element, decrement index. Keep doing that till index is 0. Then remove the first element.
+;; Check for bounds at the start.
 (defun li_find_nth(n l)
-	(if (or (null l) (null n))
+	(if (or (null l) (null n) (< (list-length l) n))
 		nil
 		(if (= n 0)
 			(first l)
@@ -95,6 +100,31 @@
 		)
 	)
 )
+
+;; Find the last element
+(defun li_find_last(l)
+	(if (null l)
+		nil
+		(if (null (rest l))
+			; Doesn't work
+			; '(first l)
+			(cons (first l) nil)
+			(li_find_last (rest l))
+		)
+	)
+)
+
+;; Implementing member
+;; Implement this for all kinds for equality - list, symbols, chars et al.
+;; http://stackoverflow.com/questions/547436/whats-the-difference-between-eq-eql-equal-and-equalp-in-common-lisp
+(defun li_find_member(key l)
+	(if (eq (first l) key)
+		l
+		(li_find_member key (rest l))
+	)
+)
+
+
 
 
 
