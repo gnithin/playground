@@ -14,7 +14,7 @@
 - C-k - Deletes from cursor to the end of the line.
 - C-l - Clear screen
 - C-m - Executes the command. Similar to C-j
-- C-n - None
+- C-n - Fetches the next command in history.
 - C-o - Executes the command. Similar to C-j
 - C-p - Fetches the previous command in history.
 - C-q - Clears current line.
