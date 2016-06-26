@@ -22,10 +22,18 @@
 - C-s - Forward command search?? 
 - C-t - Swaps the last 2 characters and moves ahead by - 
 		2 chars if cursor's at the start, 1 char in the middle, 0 char if at end.
+- M-t - Swap the word before and after the cursor, if at end of line swap the last two words
+        (This does not work with <kbd>Alt</kbd> in Gnome Terminal as it captures thsi sequence
+         and does not pass it to underlying shell use <kbd>Esc</kbd> instead)
 - C-u - Clears current line. Similar to C-q
-- C-v - None
+- C-v - Enter the next key pressed literally
 - C-w - Clears alphanumeric chars from the chars behind the cursors till it's not alphanumeric.
+- M-d - Delete the next word
 - C-x - Selection of text. When cursor is at the end of the line, seems to select the entire line.
 		The selection is a bit more involved when the cursor is somewhere in the middle(It keeps changing)
-- C-y - Undo the clear done by C-w, C-u, (Not C-q)
-- C-z - None
+- C-y - Undo the clear done by C-w, C-u, (Not C-q). Pastes latest entry from the kill ring
+- M-y - Paste the earlier entry from the kill ring (relevant only if last command was C-y or M-y)
+- C-z - Suspend the currently running process
+- C-/ - Undo last text edit
+- M-f - Move forward one word (On Gnome terminal use <kbd>Esc</kbd> instead of <kbd>Alt</kbd>)
+- M-b - Move back one word
