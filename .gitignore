@@ -2,3 +2,4 @@ iOS_try
 .DS_Store
 .ipynb_checkpoints/
 ignore_dir/
+node_modules/
