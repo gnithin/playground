@@ -3,3 +3,4 @@ iOS_try
 .ipynb_checkpoints/
 ignore_dir/
 node_modules/
+python-recsys/
