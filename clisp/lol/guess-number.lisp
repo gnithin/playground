@@ -25,24 +25,23 @@
 
 ;; Trying out nested functions
 (defun trial(n)
-    (let 
+    (let
         (
             (temp1 100)
             (temp2 200)
         )
-        (labels (
-                    (
-                     println(s)
+        (labels(
+                    (println(s)
                          (print s)
-                     )
-                   (display_contents()
-                    (println temp1)
-                    (println temp2)
-                    (println n)
-                    (- 20 n)
-                   )
-              )
-          (display_contents)
+                    )
+                    (display_contents()
+                        (println temp1)
+                        (println temp2)
+                        (println n)
+                        (- 20 n)
+                    )
+            )
+            (display_contents)
         )
     )
 )
