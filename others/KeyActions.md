@@ -1,4 +1,4 @@
-### Compendium of actions with zsh on GNOME Terminal
+### Compendium of key actions on a Terminal (Atleast most of them. It's mainly tested on Gnome)
 - C-a - Jump to start of the line
 - C-b - Go back one character in the same line
 - C-c - Cancel the current command and open a new one
@@ -37,3 +37,8 @@
 - C-/ - Undo last text edit
 - M-f - Move forward one word (On Gnome terminal use <kbd>Esc</kbd> instead of <kbd>Alt</kbd>)
 - M-b - Move back one word
+
+### Other information, or points to remember that will be forgotten.
+- <kbd>Alt</kbd> is the meta key in the Gnome version that comes out of the box in Ubuntu 16.04.
+- In iTerm2 (And probably in some other terminals as well), <kbd>Esc</kbd> acts as the meta key.
+  To map the <kbd>Esc</kbd> to <kbd>Alt</kbd> (which is called the option key in Mac), go to preferences/profile in iTerm2 and select 'Left Option key acts as - +Esc'.
