@@ -4,3 +4,4 @@ iOS_try
 ignore_dir/
 node_modules/
 python-recsys/
+.ropeproject/
