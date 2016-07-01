@@ -1,8 +1,8 @@
 import pandas as pd
-import numpy as np
+# import numpy as np
 
 # Not needed now atleast
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
 # All constants
 FILE_DIR = "movie-data/"
@@ -12,6 +12,7 @@ class Movie:
     def __init__(self):
         self.movies_data = None
         self.ratings_data = None
+        self.__pivot_table = None
 
     def fetch_data(self,
                    file_name,
@@ -92,6 +93,18 @@ class Movie:
 
         return self.ratings_data is not None
 
+    def process_movies(self,
+                       invalidate_cache=False
+                       ):
+        # create the pivot table
+        self.__pivot_table = pd.pivot_table(
+            self.ratings_data,
+            columns=['user_id'],
+            index=['movie_id'],
+            values=['rating']
+        )
+
+
 if __name__ == "__main__":
     # Just writing down the sequence of things that need to be done
     movie_obj = Movie()
@@ -107,3 +120,5 @@ if __name__ == "__main__":
         print_info=True,
         col_names=['user_id', 'movie_id', 'rating', 'timestamp']
     )
+
+    movie_obj.process_movies()
