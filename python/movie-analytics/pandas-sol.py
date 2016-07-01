@@ -105,6 +105,22 @@ class Movie:
             fill_value=0.0
         )
 
+    def movie_find_similarity_corr(self, movie_id):
+        if movie_id not in self._pivot_table.index:
+            print "Could not find movie id"
+            return None
+
+        movie_row = self._pivot_table.ix[movie_id]
+
+        # Remove all the values that are nil
+        # iuser_ids_positive_rating = movie_row[]
+
+        # Find the correlation between the movies and ratings
+        self._movie_similar_corr = self._pivot_table.corrwith(
+            movie_row,
+            axis=1
+        )
+
 
 if __name__ == "__main__":
     # Just writing down the sequence of things that need to be done
@@ -123,3 +139,4 @@ if __name__ == "__main__":
     )
 
     movie_obj.process_movies()
+    movie_obj.movie_find_similarity_corr(200)
