@@ -12,7 +12,7 @@ class Movie:
     def __init__(self):
         self.movies_data = None
         self.ratings_data = None
-        self.__pivot_table = None
+        self._pivot_table = None
 
     def fetch_data(self,
                    file_name,
@@ -97,11 +97,12 @@ class Movie:
                        invalidate_cache=False
                        ):
         # create the pivot table
-        self.__pivot_table = pd.pivot_table(
+        self._pivot_table = pd.pivot_table(
             self.ratings_data,
             columns=['user_id'],
             index=['movie_id'],
-            values=['rating']
+            values=['rating'],
+            fill_value=0.0
         )
 
 
