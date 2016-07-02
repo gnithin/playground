@@ -113,7 +113,7 @@ class Movie:
         movie_row = self._pivot_table.ix[movie_id]
 
         # Remove all the values that are nil
-        # iuser_ids_positive_rating = movie_row[]
+        # user_ids_positive_rating = movie_row[]
 
         # Find the correlation between the movies and ratings
         self._movie_similar_corr = self._pivot_table.corrwith(
