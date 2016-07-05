@@ -133,7 +133,23 @@
     )
 )
 
-
+(defun foobar(n)
+    (let ((m5 (zerop (mod n 5))) (m3 (zerop (mod n 3))))
+        (cond
+            ((<= n 0) 
+                nil)
+            (t
+                (foobar (1- n))
+                (cond
+                    ((and m3 m5) (print 'foobar))
+                    (m3 (print 'foo))
+                    (m5 (print 'bar))
+                    (t (print n))
+                )
+            )
+        )
+    )
+)
 
 
 
