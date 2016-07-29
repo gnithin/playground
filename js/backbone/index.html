@@ -31,9 +31,13 @@
         console.log("Called initialize");
         this.render();
       },
+      template: _.template("<%= name %>'s gotta see the BAAABY!!!"),
       render: function(){
         console.log("Render");
-        this.$el.html("When are you gonna come see the BAAABY!!!");
+        templateStr = this.template({
+          name : "Jerry"
+        });
+        this.$el.html(thisemplateStr);
       }
     });
     new appView();
