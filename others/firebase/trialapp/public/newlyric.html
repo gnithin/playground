@@ -1,0 +1,43 @@
+<html>
+        <head>
+                <meta charset="utf-8">
+                <title>Lyrics</title>
+                <style media="screen">
+                        body {
+                                font-family: Roboto, Arial, sans-serif;
+                                background: #ECEFF1;
+                                color: rgba(0,0,0,0.87);
+                                font-size: 30px;
+                        }
+                </style>
+        </head>
+        <body>
+                <div id="message">
+                        <div>
+                                <input type="text" id="input-box">
+                        </div>
+                </div>
+                <!-- Script part -->
+                <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js">
+                </script>
+                <script>
+                // Initialize Firebase
+                var config = {
+                    apiKey: "AIzaSyCbXXx0I0RoLf77NJl34mrSXQjvGVvf-no",
+                    authDomain: "trialapp-e2bd8.firebaseapp.com",
+                    databaseURL: "https://trialapp-e2bd8.firebaseio.com",
+                    storageBucket: "trialapp-e2bd8.appspot.com",
+                    messagingSenderId: "219366083089"
+                };
+                firebase.initializeApp(config);
+                function writeUserData(userId, name, email) {
+                    firebase.database().ref('users/' + userId).set({
+                        username: name,
+                        email: email,
+                    });
+                }
+                writeUserData("1", "vageta", "vageta@gmail.com")
+
+                </script>
+        </body>
+</html>
