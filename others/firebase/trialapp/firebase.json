@@ -3,6 +3,18 @@
     "rules": "database.rules.json"
   },
   "hosting": {
-    "public": "public"
+    "public": "public",
+    "cleanUrls": true,
+    "trialingSlash": false,
+    "rewrites": [
+        {
+            "source": "/unforgiven",
+            "destination": "/index.html"
+        },
+        {
+            "source": "/metallica",
+            "destination": "/index.html"
+        }
+    ]
   }
 }
